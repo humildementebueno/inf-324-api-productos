@@ -3,6 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
+
+//var mongoose1 = new mongoose();
+
+const uri = "mongodb+srv://admin:12345@cluster0.gkda7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
+mongoose.connect(uri).then(function(){
+  console.log('Conectado');
+});
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
